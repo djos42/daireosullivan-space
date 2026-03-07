@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Name — Propulsion Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 0 4rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-inner { max-width: 900px; }
+
+    .hero-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 0.3rem 0.8rem;
+      margin-bottom: 2rem;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .hero-name {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      font-weight: 800;
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      margin-bottom: 1.2rem;
+      animation: fadeUp 0.6s 0.1s ease both;
+    }
+
+    .hero-name span { color: var(--accent); display: block; }
+
+    .hero-sub {
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 520px;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      animation: fadeUp 0.6s 0.3s ease both;
+    }
+
+    /* ABOUT */
+    .about {
+      padding: 7rem 4rem;
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border);
+      max-width: 720px;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+      line-height: 1.9;
+    }
+
+    .about-text p strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* FEATURED PROJECTS */
+    .featured {
+      padding: 0 4rem 7rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .featured-footer {
+      margin-top: 1.5px;
+      background: var(--card-bg);
+      border: 1.5px solid var(--border);
+      border-top: none;
+      padding: 1.5rem 2.5rem;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .view-all {
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.2s;
+    }
+
+    .view-all:hover { color: var(--accent); }
+
+    /* CONTACT */
+    .contact {
+      padding: 7rem 4rem;
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-headline {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+    }
+
+    .contact-headline span { color: var(--accent); }
+
+    .contact-links { display: flex; flex-direction: column; }
+
+    .contact-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 0;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.2s;
+    }
+
+    .contact-item:hover { color: var(--accent); }
+
+    .contact-item-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .contact-item:hover .contact-item-label { color: var(--accent); }
+
+    .contact-item-value {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .arrow {
+      font-size: 1.2rem;
+      transition: transform 0.2s;
+    }
+
+    .contact-item:hover .arrow { transform: translate(4px, -4px); }
+
+    @media (max-width: 768px) {
+      .hero { padding: 8rem 1.5rem 4rem; min-height: auto; }
+      .about { padding: 4rem 1.5rem; }
+      .featured { padding: 0 1.5rem 4rem; }
+      .contact { padding: 4rem 1.5rem; grid-template-columns: 1fr; gap: 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">YN.</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-tag">Propulsion Engineer</div>
+      <h1 class="hero-name">
+        Your<br>
+        <span>Name.</span>
+      </h1>
+      <p class="hero-sub">
+        I design and develop propulsion systems — from concept through test.
+        Currently focused on [liquid/solid/electric] propulsion at [Company / University].
+      </p>
+      <div class="hero-cta">
+        <a href="projects.html" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="section-header reveal">
+      <span class="section-label">// 001</span>
+      <h2 class="section-title">About</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-text reveal">
+      <p>
+        I'm a propulsion engineer with a focus on <strong>[your specialty — e.g. combustion stability, turbopump design, EP systems]</strong>.
+        I work at the intersection of analysis and hardware, taking systems from napkin sketch to test stand.
+      </p>
+      <p>
+        My background spans <strong>[CFD / experimental testing / systems engineering]</strong>,
+        and I've worked on programs ranging from [small sat propulsion] to [launch vehicle stages].
+      </p>
+      <p>
+        Outside of work I'm interested in [amateur rocketry / open-source simulation tools / whatever fits].
+      </p>
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECTS -->
+  <section class="featured" id="projects">
+    <div class="section-header reveal">
+      <span class="section-label">// 002</span>
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="projects-grid">
+      <a href="project-biprop.html" class="project-card reveal">
+        <span class="project-index">Project 01</span>
+        <h3 class="project-title">Liquid Bipropellant Engine</h3>
+        <p class="project-desc">
+          Designed and tested a 500 lbf LOX/ethanol engine. Led combustion analysis, injector design,
+          and oversaw three hot-fire tests achieving 98% c* efficiency.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Combustion</span>
+          <span class="tag">LOX/Ethanol</span>
+          <span class="tag">Injector Design</span>
+          <span class="tag">Hot-Fire</span>
+        </div>
+        <span class="project-more">Read more →</span>
+      </a>
+
+      <a href="project-turbopump.html" class="project-card reveal">
+        <span class="project-index">Project 02</span>
+        <h3 class="project-title">Turbopump Performance Model</h3>
+        <p class="project-desc">
+          Built a Python-based meanline turbopump model for rapid design iteration.
+          Validated against test data across three engine configurations.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Turbomachinery</span>
+          <span class="tag">Modeling</span>
+        </div>
+        <span class="project-more">Read more →</span>
+      </a>
+    </div>
+
+    <div class="featured-footer">
+      <a href="projects.html" class="view-all">View all projects →</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="reveal">
+      <div class="section-label" style="margin-bottom:1rem">// 003</div>
+      <h2 class="contact-headline">
+        Let's work<br>
+        <span>together.</span>
+      </h2>
+    </div>
+    <div class="contact-links reveal">
+      <a href="mailto:you@email.com" class="contact-item">
+        <div>
+          <div class="contact-item-label">Email</div>
+          <div class="contact-item-value">you@email.com</div>
+        </div>
+        <span class="arrow">↗</span>
+      </a>
+      <a href="https://linkedin.com/in/yourprofile" class="contact-item" target="_blank">
+        <div>
+          <div class="contact-item-label">LinkedIn</div>
+          <div class="contact-item-value">linkedin.com/in/yourprofile</div>
+        </div>
+        <span class="arrow">↗</span>
+      </a>
+      <a href="https://github.com/yourusername" class="contact-item" target="_blank">
+        <div>
+          <div class="contact-item-label">GitHub</div>
+          <div class="contact-item-value">github.com/yourusername</div>
+        </div>
+        <span class="arrow">↗</span>
+      </a>
+      <a href="/resume.pdf" class="contact-item" target="_blank">
+        <div>
+          <div class="contact-item-label">Resume</div>
+          <div class="contact-item-value">Download PDF</div>
+        </div>
+        <span class="arrow">↗</span>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Your Name. All rights reserved.</p>
+    <p>Built with HTML/CSS · Hosted on GitHub Pages</p>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
