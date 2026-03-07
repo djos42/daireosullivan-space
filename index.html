@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Name — Propulsion Engineer</title>
+  <title>Daire O'Sullivan — Propulsion Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
   <style>
     /* HERO */
     .hero {
@@ -33,7 +34,7 @@
     }
 
     .hero-name {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Quantico', sans-serif;
       font-size: clamp(3.5rem, 8vw, 7rem);
       font-weight: 800;
       line-height: 0.95;
@@ -67,7 +68,15 @@
       position: relative;
       z-index: 1;
       border-top: 1px solid var(--border);
-      max-width: 720px;
+      
+    }
+
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 5rem;
+      align-items: start;
+      max-width: 1000px;
     }
 
     .about-text p {
@@ -79,6 +88,30 @@
     .about-text p strong {
       color: var(--text);
       font-weight: 500;
+    }
+
+    .about-photo-wrap 
+    { 
+      position: relative; 
+    }
+
+    .about-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      display: block;
+      border: 1px solid var(--border);
+      filter: grayscale(20%);
+    }
+
+    .about-photo-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: -10px; right: -10px;
+      width: 60px; height: 60px;
+      border-right: 1px solid var(--accent);
+      border-bottom: 1px solid var(--accent);
+      opacity: 0.5;
     }
 
     /* FEATURED PROJECTS */
@@ -125,7 +158,7 @@
     }
 
     .contact-headline {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Quantico', sans-serif;
       font-size: clamp(2.2rem, 4vw, 3.5rem);
       font-weight: 800;
       letter-spacing: -0.03em;
@@ -160,7 +193,7 @@
     .contact-item:hover .contact-item-label { color: var(--accent); }
 
     .contact-item-value {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Quantico', sans-serif;
       font-size: 1rem;
       font-weight: 600;
     }
@@ -183,7 +216,7 @@
 <body>
 
   <nav>
-    <a href="index.html" class="nav-logo">YN.</a>
+    <a href="index.html" class="nav-logo">DOS</a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="projects.html">Projects</a></li>
@@ -196,8 +229,8 @@
     <div class="hero-inner">
       <div class="hero-tag">Propulsion Engineer</div>
       <h1 class="hero-name">
-        Your<br>
-        <span>Name.</span>
+        Daire<br>
+        <span>O'Sullivan.</span>
       </h1>
       <p class="hero-sub">
         I design and develop propulsion systems — from concept through test.
@@ -212,25 +245,32 @@
 
   <!-- ABOUT -->
   <section class="about" id="about">
-    <div class="section-header reveal">
-      <span class="section-label">// 001</span>
-      <h2 class="section-title">About</h2>
-      <div class="section-line"></div>
+  <div class="about-inner">
+    <div>
+      <div class="section-header reveal">
+        <span class="section-label">// 001</span>
+        <h2 class="section-title">About</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-text reveal">
+        <p>
+          I'm a propulsion engineer with a focus on <strong>[specialty]</strong>.
+          I work at the intersection of analysis and hardware, taking systems from napkin sketch to test stand.
+        </p>
+        <p>
+          My background spans <strong>[CFD / experimental testing / systems engineering]</strong>,
+          and I've worked on programs ranging from [small sat propulsion] to [launch vehicle stages].
+        </p>
+        <p>
+          Outside of work I'm interested in [amateur rocketry / open-source simulation tools / whatever fits].
+        </p>
+      </div>
     </div>
-    <div class="about-text reveal">
-      <p>
-        I'm a propulsion engineer with a focus on <strong>[your specialty — e.g. combustion stability, turbopump design, EP systems]</strong>.
-        I work at the intersection of analysis and hardware, taking systems from napkin sketch to test stand.
-      </p>
-      <p>
-        My background spans <strong>[CFD / experimental testing / systems engineering]</strong>,
-        and I've worked on programs ranging from [small sat propulsion] to [launch vehicle stages].
-      </p>
-      <p>
-        Outside of work I'm interested in [amateur rocketry / open-source simulation tools / whatever fits].
-      </p>
+    <div class="about-photo-wrap reveal">
+      <img src="photo.jpg" alt="Daire O'Sullivan" class="about-photo">
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- FEATURED PROJECTS -->
   <section class="featured" id="projects">
@@ -283,35 +323,35 @@
     <div class="reveal">
       <div class="section-label" style="margin-bottom:1rem">// 003</div>
       <h2 class="contact-headline">
-        Let's work<br>
-        <span>together.</span>
+        Think I could be the right fit?<br>
+        <span>Contact me.</span>
       </h2>
     </div>
     <div class="contact-links reveal">
-      <a href="mailto:you@email.com" class="contact-item">
+      <!--<a href="mailto:you@email.com" class="contact-item">
         <div>
           <div class="contact-item-label">Email</div>
           <div class="contact-item-value">you@email.com</div>
         </div>
         <span class="arrow">↗</span>
-      </a>
+      </a>-->
       <a href="https://linkedin.com/in/yourprofile" class="contact-item" target="_blank">
         <div>
           <div class="contact-item-label">LinkedIn</div>
-          <div class="contact-item-value">linkedin.com/in/yourprofile</div>
+          <div class="contact-item-value">https://www.linkedin.com/in/daire-o-sullivan-aeronautical/</div>
         </div>
         <span class="arrow">↗</span>
       </a>
-      <a href="https://github.com/yourusername" class="contact-item" target="_blank">
+      <!--<a href="https://github.com/yourusername" class="contact-item" target="_blank">
         <div>
           <div class="contact-item-label">GitHub</div>
           <div class="contact-item-value">github.com/yourusername</div>
         </div>
         <span class="arrow">↗</span>
-      </a>
+      </a>-->
       <a href="/resume.pdf" class="contact-item" target="_blank">
         <div>
-          <div class="contact-item-label">Resume</div>
+          <div class="contact-item-label">Curriculum Vitae</div>
           <div class="contact-item-value">Download PDF</div>
         </div>
         <span class="arrow">↗</span>
@@ -320,8 +360,8 @@
   </section>
 
   <footer>
-    <p>© 2026 Your Name. All rights reserved.</p>
-    <p>Built with HTML/CSS · Hosted on GitHub Pages</p>
+    <p>Daire O'Sullivan 2026.</p>
+    <p>Built with HTML/CSS · Hosted on Codeberg</p>
   </footer>
 
   <script>

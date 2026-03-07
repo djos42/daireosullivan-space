@@ -1,13 +1,13 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg: #0a0a0b;
+  --bg: #38383e;
   --surface: #111114;
   --border: #1e1e24;
-  --accent: #e8f04a;
+  --accent: #d10b0b;
   --accent-dim: rgba(232, 240, 74, 0.12);
   --text: #e8e8ec;
-  --muted: #6b6b78;
+  --muted: #ffffff;
   --card-bg: #0f0f13;
 }
 
@@ -61,7 +61,7 @@ nav {
 }
 
 .nav-logo {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Quantico', sans-serif;
   font-weight: 800;
   font-size: 1.1rem;
   letter-spacing: -0.02em;
@@ -104,7 +104,7 @@ nav {
 }
 
 .section-title {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Quantico', sans-serif;
   font-size: clamp(1.8rem, 3vw, 2.5rem);
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -190,7 +190,7 @@ nav {
 }
 
 .project-title {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Quantico', sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: -0.01em;
