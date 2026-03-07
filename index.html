@@ -14,12 +14,13 @@
       min-height: 100vh;
       display: flex;
       align-items: center;
-      padding: 0 4rem;
+      padding: 4rem 4rem 0;
       position: relative;
       z-index: 1;
+      overflow: visible;
     }
 
-    .hero-inner { max-width: 900px; }
+    .hero-inner { max-width: 900px; overflow: visible; }
 
     .hero-tag {
       display: inline-block;
@@ -233,8 +234,8 @@
         <span>O'Sullivan.</span>
       </h1>
       <p class="hero-sub">
-        I design and develop propulsion systems — from concept through test.
-        Currently focused on [liquid/solid/electric] propulsion at [Company / University].
+        Propulsion Engineer with experience designing, building and testing solid and hybrid rocket motor with dreams to work on liquid rocket engines. 
+        Currently working as a Propulsion Test Engineer.
       </p>
       <div class="hero-cta">
         <a href="projects.html" class="btn btn-primary">View Projects</a>
@@ -254,15 +255,18 @@
       </div>
       <div class="about-text reveal">
         <p>
-          I'm a propulsion engineer with a focus on <strong>[specialty]</strong>.
-          I work at the intersection of analysis and hardware, taking systems from napkin sketch to test stand.
+          I'm a propulsion engineer who is passionate about space, rockets and aircraft.
+          I have experience working with hardware from initial concept to full system testing.
+          I feel strongly about advancing European aerospace autonomy and expertise and aim to work on projects that further this goal.
         </p>
         <p>
-          My background spans <strong>[CFD / experimental testing / systems engineering]</strong>,
-          and I've worked on programs ranging from [small sat propulsion] to [launch vehicle stages].
+          I completed my BEng in Aeronautical Engineering at the University of Limerick before doing an MSc in Thermal Power and Propulsion at Cranfield University.
+          While in UL I cofounded the student rocketry team, ULAS HiPR and competed at Mach-24 and EUROC 24. 
+          At Cranfield I went to Race2Space 2025 as Project Manager for the CranSEDS hybrid rocket engine. 
+          I am now working at Destinus as a Propulsion Test Engineer where I get to apply what I learned in the previous 5 years.
         </p>
         <p>
-          Outside of work I'm interested in [amateur rocketry / open-source simulation tools / whatever fits].
+          When I'm not working I still manage to spend my time thinking about rockets and space through my roles in SGAC and EirSEDS.
         </p>
       </div>
     </div>
@@ -283,31 +287,29 @@
     <div class="projects-grid">
       <a href="project-biprop.html" class="project-card reveal">
         <span class="project-index">Project 01</span>
-        <h3 class="project-title">Liquid Bipropellant Engine</h3>
+        <h3 class="project-title">An Investigation of Three Supersonic Wing at Mach 2, 3 and 5 using Computational Fluid Dynamics</h3>
         <p class="project-desc">
-          Designed and tested a 500 lbf LOX/ethanol engine. Led combustion analysis, injector design,
-          and oversaw three hot-fire tests achieving 98% c* efficiency.
+          Used STARCCM+ to investigate the impact of planform, chord, angle of attack and Mach number on the aerodynamic performance of a wing.  
         </p>
         <div class="project-tags">
-          <span class="tag">Combustion</span>
-          <span class="tag">LOX/Ethanol</span>
-          <span class="tag">Injector Design</span>
-          <span class="tag">Hot-Fire</span>
+          <span class="tag">CFD</span>
+          <span class="tag">Aerodynamics</span>
+          <span class="tag">Research</span>
+          <span class="tag">Supersonic</span>
         </div>
         <span class="project-more">Read more →</span>
       </a>
 
       <a href="project-turbopump.html" class="project-card reveal">
         <span class="project-index">Project 02</span>
-        <h3 class="project-title">Turbopump Performance Model</h3>
+        <h3 class="project-title"> Design and Development of a Rocket Test Facility on a Mobile Trailer Platform</h3>
         <p class="project-desc">
-          Built a Python-based meanline turbopump model for rapid design iteration.
-          Validated against test data across three engine configurations.
+          Designing structure and fluid system of a test stand rated for 10kN of thrust that will enables rocket propulsion research at any location. 
         </p>
         <div class="project-tags">
-          <span class="tag">Python</span>
-          <span class="tag">Turbomachinery</span>
-          <span class="tag">Modeling</span>
+          <span class="tag">Research</span>
+          <span class="tag">FEA</span>
+          <span class="tag">Fluid Systems</span>
         </div>
         <span class="project-more">Read more →</span>
       </a>
@@ -349,7 +351,7 @@
         </div>
         <span class="arrow">↗</span>
       </a>-->
-      <a href="/resume.pdf" class="contact-item" target="_blank">
+      <a href="cv.pdf" class="contact-item" target="_blank">
         <div>
           <div class="contact-item-label">Curriculum Vitae</div>
           <div class="contact-item-value">Download PDF</div>
