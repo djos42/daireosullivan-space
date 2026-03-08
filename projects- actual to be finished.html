@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daire O'Sullivan — Propulsion Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    .page-hero {
+      padding: 10rem 4rem 4rem;
+      position: relative;
+      z-index: 1;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-hero-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      display: block;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .page-hero h1 {
+      font-family: 'Quantico', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      animation: fadeUp 0.5s 0.1s ease both;
+    }
+
+    .page-hero p {
+      color: var(--muted);
+      margin-top: 1.2rem;
+      max-width: 480px;
+      animation: fadeUp 0.5s 0.2s ease both;
+    }
+
+    /* FILTER BAR */
+    .filter-bar {
+      position: relative;
+      z-index: 1;
+      padding: 1.5rem 4rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.9rem;
+      border: 1px solid var(--border);
+      background: none;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .filter-btn.active { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+
+    /* PROJECTS AREA */
+    .projects-wrap {
+      position: relative;
+      z-index: 1;
+      padding: 4rem;
+    }
+
+    .projects-grid {
+      margin-bottom: 0;
+    }
+
+    /* hide filtered cards */
+    .project-card.hidden {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .page-hero { padding: 8rem 1.5rem 3rem; }
+      .filter-bar { padding: 1.2rem 1.5rem; }
+      .projects-wrap { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">DOS.</a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <span class="page-hero-label">// Work</span>
+    <h1>All Projects</h1>
+    <p>A full record of engineering work — analysis, hardware, and tooling.</p>
+  </div>
+
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="combustion">Combustion</button>
+    <button class="filter-btn" data-filter="modeling">Modeling</button>
+    <button class="filter-btn" data-filter="systems">Systems</button>
+    <button class="filter-btn" data-filter="hardware">Hardware</button>
+  </div>
+
+  <div class="projects-wrap">
+    <div class="projects-grid">
+
+      <a href="project-biprop.html" class="project-card reveal" data-tags="combustion hardware">
+        <span class="project-index">Project 01</span>
+        <h3 class="project-title">Liquid Bipropellant Engine</h3>
+        <p class="project-desc">
+          Designed and tested a 500 lbf LOX/ethanol engine. Led combustion analysis, injector design,
+          and oversaw three hot-fire tests achieving 98% c* efficiency.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Combustion</span>
+          <span class="tag">LOX/Ethanol</span>
+          <span class="tag">Injector Design</span>
+          <span class="tag">Hot-Fire</span>
+        </div>
+        <span class="project-more">Read more →</span>
+      </a>
+
+      <a href="project-turbopump.html" class="project-card reveal" data-tags="modeling hardware">
+        <span class="project-index">Project 02</span>
+        <h3 class="project-title">Turbopump Performance Model</h3>
+        <p class="project-desc">
+          Built a Python-based meanline turbopump model for rapid design iteration.
+          Validated against test data across three engine configurations; adopted by the fluids team.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Turbomachinery</span>
+          <span class="tag">Modeling</span>
+        </div>
+        <span class="project-more">Read more →</span>
+      </a>
+
+      <a href="project-rcs.html" class="project-card reveal" data-tags="systems">
+        <span class="project-index">Project 03</span>
+        <h3 class="project-title">Cold Gas RCS for CubeSat</h3>
+        <p class="project-desc">
+          Designed a cold gas attitude control system for a 6U CubeSat platform.
+          Sized propellant tanks, valves, and thrusters for a 3-year LEO mission with a 50m pointing budget.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Cold Gas</span>
+          <span class="tag">CubeSat</span>
+          <span class="tag">Systems Eng</span>
+        </div>
+        <span class="project-more">Read more →</span>
+      </a>
+
+      <a href="project-4.html" class="project-card reveal" data-tags="modeling combustion">
+        <span class="project-index">Project 04</span>
+        <h3 class="project-title">Your Project Title</h3>
+        <p class="project-desc">
+          Describe what you built, what problem it solved, and what your specific role was.
+          Focus on outcomes: performance numbers, efficiency gains, mission results.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Tag</span>
+          <span class="tag">Tag</span>
+        </div>
+        <span class="project-more">Read more →</span>
+      </a>
+
+      <a href="project-5.html" class="project-card reveal" data-tags="hardware systems">
+        <span class="project-index">Project 05</span>
+        <h3 class="project-title">Your Project Title</h3>
+        <p class="project-desc">
+          Describe what you built, what problem it solved, and what your specific role was.
+          Focus on outcomes: performance numbers, efficiency gains, mission results.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Tag</span>
+          <span class="tag">Tag</span>
+        </div>
+        <span class="project-more">Read more →</span>
+      </a>
+
+      <a href="project-6.html" class="project-card reveal" data-tags="modeling systems">
+        <span class="project-index">Project 06</span>
+        <h3 class="project-title">Your Project Title</h3>
+        <p class="project-desc">
+          Describe what you built, what problem it solved, and what your specific role was.
+          Focus on outcomes: performance numbers, efficiency gains, mission results.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Tag</span>
+          <span class="tag">Tag</span>
+        </div>
+        <span class="project-more">Read more →</span>
+      </a>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 Your Name. All rights reserved.</p>
+    <p>Built with HTML/CSS · Hosted on GitHub Pages</p>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.project-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+        cards.forEach(card => {
+          const tags = card.dataset.tags || '';
+          if (filter === 'all' || tags.includes(filter)) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
