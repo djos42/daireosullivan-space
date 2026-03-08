@@ -73,12 +73,23 @@
     }
 
     .about-inner {
-      display: grid;
-      grid-template-columns: 1fr 280px;
-      gap: 5rem;
-      align-items: start;
-      max-width: 1000px;
-    }
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 5rem;
+  align-items: start;
+  max-width: 1000px;
+}
+
+@media (max-width: 768px) {
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .about-photo-wrap {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+}
 
     .about-text p {
       color: var(--muted);
