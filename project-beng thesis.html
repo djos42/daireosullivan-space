@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daire O'Sullivan — Propulsion Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    .project-page {
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 10rem 4rem 6rem;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      margin-bottom: 3rem;
+      transition: color 0.2s;
+      animation: fadeUp 0.4s ease both;
+    }
+
+    .back-link:hover { color: var(--accent); }
+
+    .project-meta {
+      margin-bottom: 3rem;
+      animation: fadeUp 0.5s 0.05s ease both;
+    }
+
+    .project-meta-index {
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .project-page-title {
+      font-family: 'Quantico', sans-serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-meta-row {
+      display: flex;
+      gap: 3rem;
+      flex-wrap: wrap;
+      padding: 1.5rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .meta-item-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .meta-item-value {
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+
+    /* IMAGE PLACEHOLDER */
+    .project-image {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin: 2.5rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-image::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(232,240,74,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(232,240,74,0.03) 1px, transparent 1px);
+      background-size: 30px 30px;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* CONTENT */
+    .project-body {
+      animation: fadeUp 0.5s 0.15s ease both;
+    }
+
+    .project-body h2 {
+      font-family: 'Quantico', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin: 2.5rem 0 1rem;
+      color: var(--text);
+    }
+
+    .project-body h2:first-child { margin-top: 0; }
+
+    .project-body p {
+      color: var(--muted);
+      line-height: 1.9;
+      margin-bottom: 1rem;
+    }
+
+    .project-body p strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .project-body ul {
+      list-style: none;
+      margin-bottom: 1rem;
+    }
+
+    .project-body ul li {
+      color: var(--muted);
+      line-height: 1.9;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    .project-body ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    /* RESULTS CALLOUT */
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+
+    .result-item {
+      background: var(--card-bg);
+      padding: 1.5rem;
+    }
+
+    .result-number {
+      font-family: 'Quantico', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .result-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* LINKS */
+    .project-links-section {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 1rem;
+    }
+
+    /* NAV BETWEEN PROJECTS */
+    .project-nav {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin: 4rem 0 0;
+    }
+
+    .project-nav-item {
+      background: var(--card-bg);
+      padding: 1.5rem 2rem;
+      text-decoration: none;
+      color: var(--text);
+      transition: background 0.2s;
+    }
+
+    .project-nav-item:hover { background: #13131a; }
+
+    .project-nav-item.next { text-align: right; }
+
+    .project-nav-dir {
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .project-nav-title {
+      font-family: 'Quantico', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .project-nav-item:hover .project-nav-title { color: var(--accent); }
+
+    @media (max-width: 768px) {
+      .project-page { padding: 8rem 1.5rem 4rem; }
+      .results-grid { grid-template-columns: 1fr; }
+      .project-nav { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">DOS.</a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <article class="project-page">
+
+    <a href="projects.html" class="back-link">← All Projects</a>
+
+    <div class="project-meta">
+      <span class="project-meta-index">Project 01</span>
+      <h1 class="project-page-title">An Investigation of Three Supersonic Wing at Mach 2, 3 and 5 using Computational Fluid Dynamics</h1>
+
+      <div class="project-meta-row">
+        <div>
+          <div class="meta-item-label">Role</div>
+          <div class="meta-item-value">BEng Final Year Student</div>
+        </div>
+        <div>
+          <div class="meta-item-label">Year</div>
+          <div class="meta-item-value">2024</div>
+        </div>
+        <div>
+          <div class="meta-item-label">Organization</div>
+          <div class="meta-item-value">University of Limerick</div>
+        </div>
+        <div>
+          <div class="meta-item-label">Status</div>
+          <div class="meta-item-value">Degree Awarded</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Replace src with your actual image -->
+    <div class="project-image">
+      [ Insert image or diagram here ]
+    </div>
+
+    <div class="project-body">
+
+      <h2>Overview</h2>
+      <p>
+        Brief summary of the project — what it is, why it exists, and what you set out to accomplish.
+        Keep this tight: two or three sentences that give the reader the full picture fast.
+      </p>
+
+      <h2>Problem</h2>
+      <p>
+        Describe the engineering problem or design challenge you were solving. What constraints did you work within?
+        What made it hard? This is where you show you understand the domain, not just the tools.
+      </p>
+
+      <h2>My Approach</h2>
+      <p>
+        Walk through how you tackled it. What analysis did you run? What trades did you make?
+        Be specific — the details are what differentiate an engineer's portfolio from a resume bullet.
+      </p>
+      <ul>
+        <li>Injector element sizing using Hewitt correlation and CEA outputs</li>
+        <li>Acoustic stability analysis with quarter-wave resonator placement</li>
+        <li>Thermal analysis of chamber wall with regenerative cooling channels</li>
+      </ul>
+
+      <h2>Results</h2>
+      <div class="results-grid">
+        <div class="result-item">
+          <div class="result-number">98%</div>
+          <div class="result-label">c* Efficiency</div>
+        </div>
+        <div class="result-item">
+          <div class="result-number">3</div>
+          <div class="result-label">Hot-fire Tests</div>
+        </div>
+        <div class="result-item">
+          <div class="result-number">500 lbf</div>
+          <div class="result-label">Thrust (vac)</div>
+        </div>
+      </div>
+      <p>
+        Any additional context on results — what you learned, what you'd do differently, what came next.
+      </p>
+
+    </div>
+
+    <div class="project-links-section">
+      <a href="#" class="btn btn-primary">GitHub Repo</a>
+      <a href="#" class="btn btn-outline">Technical Write-up</a>
+    </div>
+
+    <nav class="project-nav">
+      <a href="projects.html" class="project-nav-item">
+        <div class="project-nav-dir">← Previous</div>
+        <div class="project-nav-title">All Projects</div>
+      </a>
+      <a href="project-turbopump.html" class="project-nav-item next">
+        <div class="project-nav-dir">Next →</div>
+        <div class="project-nav-title">Turbopump Performance Model</div>
+      </a>
+    </nav>
+
+  </article>
+
+  <footer>
+    <p>© 2026 Your Name. All rights reserved.</p>
+    <p>Built with HTML/CSS · Hosted on GitHub Pages</p>
+  </footer>
+
+</body>
+</html>
