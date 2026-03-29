@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daire O'Sullivan — Propulsion Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    .page-hero {
+      padding: 10rem 4rem 4rem;
+      position: relative;
+      z-index: 1;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-hero-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      display: block;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .page-hero h1 {
+      font-family: 'Quantico', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      animation: fadeUp 0.5s 0.1s ease both;
+    }
+
+    .page-hero p {
+      color: var(--muted);
+      margin-top: 1.2rem;
+      max-width: 480px;
+      animation: fadeUp 0.5s 0.2s ease both;
+    }
+
+    /* FILTER BAR */
+    .filter-bar {
+      position: relative;
+      z-index: 1;
+      padding: 1.5rem 4rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.9rem;
+      border: 1px solid var(--border);
+      background: none;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .filter-btn.active { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+
+    /* PROJECTS AREA */
+    .projects-wrap {
+      position: relative;
+      z-index: 1;
+      padding: 4rem;
+    }
+
+    .projects-grid {
+      margin-bottom: 0;
+    }
+
+    /* hide filtered cards */
+    .project-card.hidden {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .page-hero { padding: 8rem 1.5rem 3rem; }
+      .filter-bar { padding: 1.2rem 1.5rem; }
+      .projects-wrap { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">DOS.</a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <span class="page-hero-label">// Work</span>
+    <h1>All Projects</h1>
+     <p>A work in progress</p>
+  </div>
+
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="combustion">Combustion</button>
+    <button class="filter-btn" data-filter="modeling">Modeling</button>
+    <button class="filter-btn" data-filter="systems">Systems</button>
+    <button class="filter-btn" data-filter="hardware">Hardware</button>
+    <button class="filter-btn" data-filter="cfd">CFD</button>
+    <button class="filter-btn" data-filter="aerodynamics">Aerodynamics</button>
+    <button class="filter-btn" data-filter="research">Research</button>
+    
+  </div>
+
+  <div class="projects-wrap">
+    <div class="projects-grid">
+
+      <a href="project-hybrid.html" class="project-card reveal" data-tags="modeling combustion hardware">
+        <span class="project-index">Project 01</span>
+        <h3 class="project-title">CranSEDS Race2Space Hybrid Rocket Engine</h3>
+        <p class="project-desc">
+          Led a team of 10 in the development of a 2000N thrust N20/HDPE hybrid rocket motor.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Hybrid</span>
+          <span class="tag">Propulsion</span>
+          <span class="tag">Leadership</span>
+        </div>
+        <span class="project-more">Read more →</span>
+      </a>
+
+      <a href="project-test stand.html" class="project-card reveal" data-tags="modeling research">
+        <span class="project-index">Project 02</span>
+        <h3 class="project-title">Preliminary Design of a Mobile Rocket Test Platform on a Trailer</h3>
+        <p class="project-desc">
+          Designed a structure and fluid system of a test stand rated for 10kN of thrust
+           that will enables rocket propulsion research at any location.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Research</span>
+          <span class="tag">FEA</span>
+          <span class="tag">Fluid Systems</span>
+        </div>
+        <span class="project-more">Read more →</span>
+      </a>
+
+      <a href="project-beng thesis.html" class="project-card reveal" data-tags="cfd aerodynamics modeling research">
+        <span class="project-index">Project 03</span>
+        <h3 class="project-title">An Investigation of Three Supersonic Wing at Mach 2, 3 and 5 using Computational Fluid Dynamics</h3>
+        <p class="project-desc">
+          Used STARCCM+ to investigate the impact of planform, chord,
+           angle of attack and Mach number on the supersonic aerodynamic performance of a wing.
+        </p>
+        <div class="project-tags">
+          <span class="tag">CFD</span>
+          <span class="tag">Aerodynamics</span>
+          <span class="tag">Research</span>
+          <span class="tag">Supersonics</span>
+        </div>
+        <span class="project-more">Read more →</span>
+      </a>
+
+      <a href="project-mach.html" class="project-card reveal" data-tags="systems rocketry hardware">
+        <span class="project-index">Project 04</span>
+        <h3 class="project-title">Mach-24</h3>
+        <p class="project-desc">
+          Led student team in the design and launch of a high-powered rocket. Became the first Irish team to compete in an international rocketry competition.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Rocketry</span>
+          <span class="tag">Leadership</span>
+          <span class="tag">Systems Eng</span>
+        </div>
+        <span class="project-more">Read more →</span>
+      </a>
+
+
+      <a href="wip.html" class="project-card reveal" data-tags="research propulsion">
+        <span class="project-index">Project 05</span>
+        <h3 class="project-title">Solid-Propellant Rocket Engine Review Paper</h3>
+        <p class="project-desc">
+          Wrote a review paper on Solid Rocket Motors exploring their use cases, design and future development. Presented at the internally organised 62nd Engine System Symposium at Cranfield University. 
+        </p>
+        <div class="project-tags">
+          <span class="tag">Solids</span>
+          <span class="tag">Propulsion</span>
+        </div>
+        <span class="project-more">Read more →</span>
+      </a>
+
+      <a href="wip.html" class="project-card reveal" data-tags="rocketry hardware">
+        <span class="project-index">Project 06</span>
+        <h3 class="project-title">ESA Fly a Rocket! 2023</h3>
+        <p class="project-desc">
+          Took part in the launch of a sounding rocket in Andoya as part of a European Space Agency course. 
+          Worked within a team of 5 to build a radiosonde balloon that reached an altitude of 27400m.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Rocketry</span>
+          <span class="tag">Electronics</span>
+        </div>
+        <span class="project-more">Read more →</span>
+      </a>
+
+      <a href="wip.html" class="project-card reveal" data-tags="spacecraft operations systems">
+        <span class="project-index">Project 07</span>
+        <h3 class="project-title">ESA Ladybird Guide to Spacecraft Operations 2022</h3>
+        <p class="project-desc">
+          Took part in a weeklong course on spacecraft subsystems and operations at ESA Galaxia in Redu. 
+          Finished the week by with a team simulation exercise that recreated a spacecraft failure .
+        </p>
+        <div class="project-tags">
+          <span class="tag">Spacecraft</span>
+          <span class="tag">Operations</span>
+        </div>
+        <span class="project-more">Read more →</span>
+      </a>
+
+      <a href="wip.html" class="project-card reveal" data-tags="rocketry">
+        <span class="project-index">Project 08</span>
+        <h3 class="project-title">European Rocketry Challenge 2024</h3>
+        <p class="project-desc">
+          Helped lead the first Irish team to EUROC.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Rocketry</span>
+          <span class="tag">Leadership</span>
+        </div>
+        <span class="project-more">Read more →</span>
+      </a>
+
+      <a href="wip.html" class="project-card reveal" data-tags="software">
+        <span class="project-index">Project 09</span>
+        <h3 class="project-title">Munich Defence Tech Hackathon 2026</h3>
+        <p class="project-desc">
+          Attended my first hackathon where I helped develop a tool to optimise mesh antenna networks for interceptor drones.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Software</span>
+        
+        </div>
+        <span class="project-more">Read more →</span>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <p>Daire O'Sullivan 2026.</p>
+    <p>Built with HTML/CSS · Hosted on Codeberg</p>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.project-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+        cards.forEach(card => {
+          const tags = card.dataset.tags || '';
+          if (filter === 'all' || tags.includes(filter)) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

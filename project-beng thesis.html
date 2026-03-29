@@ -111,6 +111,13 @@
       object-fit: cover;
     }
 
+    .project-image video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+    }
+
     /* CONTENT */
     .project-body {
       animation: fadeUp 0.5s 0.15s ease both;
@@ -249,17 +256,17 @@
     <a href="index.html" class="nav-logo">DOS.</a>
     <ul class="nav-links">
       <li><a href="index.html#about">About</a></li>
-      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="projects-home.html" class="active">Projects</a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
   </nav>
 
   <article class="project-page">
 
-    <a href="projects.html" class="back-link">← All Projects</a>
+    <a href="projects-home.html" class="back-link">← All Projects</a>
 
     <div class="project-meta">
-      <span class="project-meta-index">Project 01</span>
+      <span class="project-meta-index">Project 03</span>
       <h1 class="project-page-title">An Investigation of Three Supersonic Wing at Mach 2, 3 and 5 using Computational Fluid Dynamics</h1>
 
       <div class="project-meta-row">
@@ -277,19 +284,22 @@
         </div>
         <div>
           <div class="meta-item-label">Status</div>
-          <div class="meta-item-value">Degree Awarded</div>
+          <div class="meta-item-value">A2 Grade</div>
         </div>
       </div>
     </div>
 
     <!-- Replace src with your actual image -->
     <div class="project-image">
-      [ Insert image or diagram here ]
+      <video autoplay loop muted playsinline>
+        <source src="video\supersonic.mp4" type="video/mp4">
+      </video>
+    </div>
     </div>
 
     <div class="project-body">
 
-      <h2>Overview</h2>
+      <!--<h2>Overview</h2>
       <p>
         Brief summary of the project — what it is, why it exists, and what you set out to accomplish.
         Keep this tight: two or three sentences that give the reader the full picture fast.
@@ -311,48 +321,32 @@
         <li>Acoustic stability analysis with quarter-wave resonator placement</li>
         <li>Thermal analysis of chamber wall with regenerative cooling channels</li>
       </ul>
+    -->
 
       <h2>Results</h2>
-      <div class="results-grid">
-        <div class="result-item">
-          <div class="result-number">98%</div>
-          <div class="result-label">c* Efficiency</div>
-        </div>
-        <div class="result-item">
-          <div class="result-number">3</div>
-          <div class="result-label">Hot-fire Tests</div>
-        </div>
-        <div class="result-item">
-          <div class="result-number">500 lbf</div>
-          <div class="result-label">Thrust (vac)</div>
-        </div>
+      <!--<p>
+      Any additional context on results — what you learned, what you'd do differently, what came next.
+      </p> -->
+      <a href="beng_thesis.pdf" class="btn btn-primary" target="_blank">Full Thesis Document →</a>
+
       </div>
-      <p>
-        Any additional context on results — what you learned, what you'd do differently, what came next.
-      </p>
-
-    </div>
-
-    <div class="project-links-section">
-      <a href="beng_thesis.pdf" class="btn btn-outline">Thesis Document</a>
-    </div>
 
     <nav class="project-nav">
-      <a href="projects.html" class="project-nav-item">
+      <a href="projects-home.html" class="project-nav-item">
         <div class="project-nav-dir">← Previous</div>
         <div class="project-nav-title">All Projects</div>
       </a>
-      <a href="project-turbopump.html" class="project-nav-item next">
+      <a href="wip.html" class="project-nav-item next">
         <div class="project-nav-dir">Next →</div>
-        <div class="project-nav-title">Turbopump Performance Model</div>
+        <div class="project-nav-title">Mach-24</div>
       </a>
     </nav>
 
   </article>
 
   <footer>
-    <p>© 2026 Your Name. All rights reserved.</p>
-    <p>Built with HTML/CSS · Hosted on GitHub Pages</p>
+    <p>Daire O'Sullivan 2026.</p>
+    <p>Built with HTML/CSS · Hosted on Codeberg</p>
   </footer>
 
 </body>
