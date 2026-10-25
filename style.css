@@ -299,6 +299,82 @@ footer p {
     gap: 3rem; 
   }
 }
+.hero { justify-content: space-between; gap: 4rem; }
+.hero-inner { flex: 1 1 0; min-width: 0; }
+
+/* shrink the name slightly so it fits beside the slideshow */
+.hero-name { font-size: clamp(3rem, 6vw, 5.5rem); }
+
+.hero-slideshow-wrap {
+  position: relative;
+  flex: 0 0 clamp(300px, 36%, 460px);
+  aspect-ratio: 4 / 5;
+  animation: fadeUp 0.6s 0.3s ease both;
+}
+
+/* same corner accent as your About photo */
+.hero-slideshow-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: -10px; right: -10px;
+  width: 60px; height: 60px;
+  border-right: 1px solid var(--accent);
+  border-bottom: 1px solid var(--accent);
+  opacity: 0.5;
+}
+
+.hero-slideshow {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.slide.active { opacity: 1; }
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(20%);
+}
+
+.slide-dots {
+  position: absolute;
+  bottom: 0.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.slide-dots button {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--accent);
+  background: transparent;
+  cursor: pointer;
+}
+
+.slide-dots button.active { background: var(--accent); }
+
+@media (max-width: 900px) {
+  .hero { flex-direction: column; align-items: stretch; gap: 3rem; }
+  .hero-slideshow-wrap { flex: none; width: 100%; max-width: 460px; }
+}
 .pdf-embed {
   width: 100%;
   height: 80vh;

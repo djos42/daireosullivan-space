@@ -253,6 +253,15 @@
         <a href="#contact" class="btn btn-outline">CV and LinkedIn</a>
       </div>
     </div>
+    <div class="hero-slideshow-wrap">
+  <div class="hero-slideshow">
+    <figure class="slide"><img src="pics/hold_rocket.JPG" alt="Holding 'I Want To Believe' in Cushendall"></figure>
+    <figure class="slide"><img src="pics/poster_pic.jpg" alt="Presenting at the UK Space Conference" loading="lazy"></figure>
+    <figure class="slide"><img src="pics/man_and_hybrid.jpg" alt="Posing next to Churro="lazy"></figure>
+    <figure class="slide"><img src="pics/r2s_presentation.jpg" alt="Presenting at the Race2Space symposium="lazy"></figure>
+    <div class="slide-dots"></div>
+  </div>
+</div>
   </section>
 
   <!-- ABOUT -->
@@ -387,6 +396,39 @@
       });
     }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
+
+    const slides = document.querySelectorAll('.hero-slideshow .slide');
+const dotsWrap = document.querySelector('.slide-dots');
+const wrap = document.querySelector('.hero-slideshow-wrap');
+let current = 0, timer;
+
+slides.forEach((_, i) => {
+  const b = document.createElement('button');
+  b.setAttribute('aria-label', 'Show slide ' + (i + 1));
+  b.addEventListener('click', () => { show(i); stop(); start(); });
+  dotsWrap.appendChild(b);
+});
+const dots = dotsWrap.querySelectorAll('button');
+
+function show(i) {
+  slides[current].classList.remove('active');
+  dots[current].classList.remove('active');
+  current = i;
+  slides[current].classList.add('active');
+  dots[current].classList.add('active');
+}
+function start() {
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    timer = setInterval(() => show((current + 1) % slides.length), 5000);
+  }
+}
+function stop() { clearInterval(timer); }
+
+wrap.addEventListener('mouseenter', stop);
+wrap.addEventListener('mouseleave', start);
+
+show(0);
+start();
   </script>
 
 </body>
