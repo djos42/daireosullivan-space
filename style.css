@@ -394,13 +394,3 @@ footer p {
   text-align: center;
 }
 
-.linkedin-embed {
-  max-width: 504px;
-  margin: 2rem auto;
-  border: 1px solid var(--border);
-}
-
-.linkedin-embed iframe {
-  width: 100%;
-  display: block;
-}
