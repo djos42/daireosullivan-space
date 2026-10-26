@@ -394,3 +394,14 @@ footer p {
   text-align: center;
 }
 
+a.inline-link {
+  color: #e5484d;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color 0.2s;
+}
+
+a.inline-link:hover {
+  color: #ff6b6f;
+}
